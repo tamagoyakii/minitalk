@@ -6,7 +6,7 @@
 #    By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 13:49:00 by jihyukim          #+#    #+#              #
-#    Updated: 2022/06/18 16:40:49 by jihyukim         ###   ########.fr        #
+#    Updated: 2022/06/23 16:33:45 by jihyukim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,10 +35,10 @@ $(NAME)	: $(OBJS)
 	@ar rcs $@ $^
 
 clean	:
-	$(RM) $(OBJS)
+	rm -f $(OBJS)
 
 fclean	: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 re		: fclean all
 

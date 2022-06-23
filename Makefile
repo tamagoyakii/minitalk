@@ -6,7 +6,7 @@
 #    By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:29:57 by jihyukim          #+#    #+#              #
-#    Updated: 2022/06/21 15:57:50 by jihyukim         ###   ########.fr        #
+#    Updated: 2022/06/23 16:39:14 by jihyukim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,14 @@ LIBFT =			libft/libft.a
 SRCS_S =		server.c utils.c
 SRCS_C =		client.c utils.c
 
-SRCS_S_BONUS =	./bonus/server_bonus.c 
-SRCS_C_BONUS =	./bonus/client_bonus.c
+SRCS_S_BONUS =	server_bonus.c utils.c
+SRCS_C_BONUS =	client_bonus.c utils.c
 
 OBJS_S =		server.o utils.o
 OBJS_C =		client.o utils.o
 
-OBJS_S_BONUS =	./bonus/server_bonus.o 
-OBJS_C_BONUS =	./bonus/client_bonus.o
+OBJS_S_BONUS =	server_bonus.o utils.o
+OBJS_C_BONUS =	client_bonus.o utils.o
 
 CC =			gcc
 
