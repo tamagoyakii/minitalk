@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 15:31:41 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/06/23 16:46:52 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/06/23 17:46:07 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@ static void	confirm_and_print(int signo, siginfo_t *info, void *context)
 {
 	static int				bit_received;
 	static unsigned char	res;
+	static pid_t			client_pid;
 
 	(void) signo;
 	(void) context;
+	if (!bit_received && !res)
+		client_pid = info->si_pid;
 	bit_received++;
 	if (signo == SIGUSR1)
 		res &= ~(1 << (8 - bit_received));
@@ -38,12 +41,12 @@ static void	confirm_and_print(int signo, siginfo_t *info, void *context)
 		bit_received = 0;
 		if (!res)
 		{
-			finish_and_wait(info->si_pid);
+			finish_and_wait(client_pid);
 			return ;
 		}
 		write(1, &res, 1);
 	}
-	kill(info->si_pid, SIGUSR1);
+	kill(client_pid, SIGUSR1);
 }
 
 static void	check_connection(int signo, siginfo_t *info, void *context)
