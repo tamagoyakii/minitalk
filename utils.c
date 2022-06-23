@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:03:17 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/06/18 18:23:45 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:00:51 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	error_exit(char *str)
 void	print_pid(int is_server)
 {
 	pid_t	pid;
-	
+
 	pid = getpid();
 	if (is_server)
 		ft_putstr_fd("Server PID: ", 1);

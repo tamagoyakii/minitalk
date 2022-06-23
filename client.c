@@ -6,13 +6,13 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:03:59 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/06/18 18:21:44 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:00:35 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-t_info g_info;
+t_info	g_info;
 
 static int	get_bit(void)
 {
@@ -49,7 +49,7 @@ static void	send_signal(int signo)
 static void	check_connection(int signo)
 {
 	int	bit;
-	
+
 	(void)signo;
 	ft_putendl_fd("Connection Success!", 1);
 	if (signal(SIGUSR1, send_signal) == SIG_ERR
@@ -69,7 +69,7 @@ static void	init_signal(void)
 	kill(g_info.server_pid, SIGUSR1);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	if (argc != 3)
 		error_exit("[Error] Wrong parameters.");

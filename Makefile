@@ -6,7 +6,7 @@
 #    By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:29:57 by jihyukim          #+#    #+#              #
-#    Updated: 2022/06/18 13:49:51 by jihyukim         ###   ########.fr        #
+#    Updated: 2022/06/21 15:57:50 by jihyukim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,6 @@ OBJS_C_BONUS =	./bonus/client_bonus.o
 CC =			gcc
 
 CFLAGS =		-Wall -Wextra -Werror
-
-
 
 all :			$(SERVER) $(CLIENT)
 
